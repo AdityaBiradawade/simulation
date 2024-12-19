@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Simulation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Interview Simulation Platform</h1>
+    
+    <div class="auth-form" id="authForm">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter your name" required><br>
+        <input type="password" id="password" placeholder="Enter your password" required><br>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register Here</a></p>
+    </div>
+    
+    <div class="auth-form" id="registerForm" style="display:none;">
+      <h2>Register</h2>
+      <form id="registerUserForm">
+        <input type="text" id="newName" placeholder="Enter your name" required><br>
+        <input type="email" id="newEmail" placeholder="Enter your email" required><br>
+        <input type="text" id="newQualification" placeholder="Enter your qualification" required><br>
+        <input type="text" id="newExam" placeholder="Enter the exam you want to prepare for" required><br>
+        <input type="password" id="newPassword" placeholder="Enter your password" required><br>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login Here</a></p>
+    </div>
+    
+    <!-- Interview Page -->
+    <div id="interviewPage" style="display:none;">
+      <h2>AI Interview Simulation</h2>
+      <div id="questionContainer">
+        <p id="question">Waiting for interview question...</p>
+      </div>
+      <div id="responseContainer">
+        <textarea id="answer" placeholder="Type your answer here"></textarea><br>
+        <button onclick="submitAnswer()">Submit Answer</button>
+      </div>
+      <div id="feedbackContainer" style="display:none;">
+        <h3>Your Assessment:</h3>
+        <p id="feedback"></p>
+      </div>
+      <video id="webcamVideo" width="640" height="480" autoplay></video>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
